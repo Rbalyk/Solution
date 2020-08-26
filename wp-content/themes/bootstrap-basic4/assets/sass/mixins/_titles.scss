@@ -1,0 +1,52 @@
+@import "../variable";
+
+@mixin page-title() {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: $white;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+@mixin page-subtitle() {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #F4F4F4;
+}
+
+@mixin section-title() {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+@mixin section-subtitle() {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  position: relative;
+  &:after{
+    content: '';
+    width: 32px;
+    height: 1px;
+    position: absolute;
+    left: -45px;
+    top: 50%;
+    transform: translateX(-50%);
+    background: #333333;
+  }
+}

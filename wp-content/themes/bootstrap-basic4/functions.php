@@ -67,236 +67,54 @@ $ThemeHelp->addActionsFilters();
 unset($ThemeHelp);
 
 //////////////////////////////////////////SHORTCODES/////////////////////////////////////////
-function portfolio_func()
-{
-    query_posts(array('category_name' => 'portfolio'));
-    echo '<section class="portfolio-area section-gap fadeIn wow" data-wow-delay="0.1s" id="portfolio">';
-    echo '<div class="container">';
-    echo '<h2>';
-    single_cat_title();
-    echo '</h2>';
-    echo '<div class="filters">';
-    echo '<ul>';
-    echo '<li class="active" data-filter="*">Всі</li>';
-    echo '<li data-filter=".apartment">Квартири</li>';
-    echo '<li data-filter=".office">Офіси</li>';
-    echo '<li data-filter=".room">Кімнати</li>';
-    echo '<li data-filter=".events">Комерція</li>';
-    echo '</ul>';
-    echo '</div>';
-    echo '<div class="filters-content">';
-    echo '<div class="row grid">';
-    while (have_posts()) {
+function home_page_header_func(){
+    query_posts(array('category_name' => 'home_page_header'));
 
-        the_post();
-        get_template_part('/partials/portfolio/_gallery');
-
-    }
-    echo '</div></div></div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('portfolio', 'portfolio_func');
-
-function team_func()
-{
-    query_posts(array('category_name' => 'team'));
-    echo '<section class="team fadeIn wow" data-wow-delay="0.1s" id="team">';
-    echo '<div class="container-fluid">';
-    echo '<h2>';
-    single_cat_title();
-    echo '</h2>';
-    echo '<div class="row">';
-    while (have_posts()) {
-
-        the_post();
-        get_template_part('/partials/_team');
-
-    }
-    echo '</div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('team', 'team_func');
-
-
-
-function rangeworks_func(){
-    query_posts(array('category_name' => 'rangeworks','posts_per_page' => -4));
-    echo '<section class="rangeworks fadeIn wow" data-wow-delay="0.1s" id="rangeworks">';
-    echo '<div class="container-fluid">';
-    echo '<div class="row">';
-    echo '<div class="container">';
-    while (have_posts()) {
-
-        the_post();
-        get_template_part('/partials/_rangeWorks');
-
-    }
-    echo '</div></div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('rangeworks', 'rangeworks_func');
-
-
-
-function rangeworkspage_func(){
-    query_posts(array('category_name' => 'rangeworks'));
-    echo '<section class="rangeworks fadeIn wow" data-wow-delay="0.1s" id="rangeworks">';
-    echo '<div class="container-fluid">';
-    echo '<div class="row">';
-    echo '<div class="container">';
-    while (have_posts()) {
-
-        the_post();
-        get_template_part('/partials/_rangeWorks');
-
-    }
-    echo '</div></div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('rangeworkspage', 'rangeworkspage_func');
-
-
-
-function aboutus_func(){
-    query_posts(array('category_name' => 'about-us'));
-    echo '<section class="about-us fadeIn wow" data-wow-delay="0.1s" id="about-us">';
-    echo '<div class="container-fluid">';
-    echo '<div class="row">';
-    echo '<div class="container">';
-    while (have_posts()) {
-
-        the_post();
-        get_template_part('/partials/about-us/_about-short');
-
-    }
-    echo '</div></div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('about-us', 'aboutus_func');
-
-
-
-function aboutusfront_func(){
-    query_posts(array('category_name' => 'about-us','posts_per_page' => -1));
-    echo '<section class="about-us fadeIn wow" data-wow-delay="0.1s" id="about-us">';
-    echo '<div class="container-fluid">';
-    echo '<div class="row">';
-    echo '<div class="container">';
-    $i = 1;
-    while (have_posts() && $i < 2) {
-
-        the_post();
-        get_template_part('/partials/about-us/_about-short');
-        $i++;
-
-    }
-    echo '</div></div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('about-us-front', 'aboutusfront_func');
-
-
-
-function process_func(){
-    query_posts(array('category_name' => 'process'));
-    echo '<section class="process fadeIn wow" data-wow-delay="0.1s" id="process">';
-    echo '<div class="container-fluid">';
-    echo '<div class="row">';
-    while (have_posts()) {
-
-        the_post();
-        get_template_part('/partials/_process');
-
-    }
-    echo '</div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('process', 'process_func');
-
-
-
-function processfront_func(){
-    query_posts(array('category_name' => 'process'));
-    echo '<section class="process fadeIn wow" data-wow-delay="0.1s" id="process">';
-    echo '<div class="container-fluid">';
-    echo '<div class="row">';
-    $i = 1;
-    while (have_posts() && $i < 2) {
-
-        the_post();
-        get_template_part('/partials/_process-front');
-        $i++;
-
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/home-page-header');
+        };
     };
+    unset($Bsb4Design);
+
     echo '</div></div></section>';
     wp_reset_query();
 }
-add_shortcode('processfront', 'processfront_func');
+add_shortcode('home_page_header', 'home_page_header_func');
+
+function home_page_about_us_func(){
+    query_posts(array('category_name' => 'about_us'));
 
 
-
-function clientsfeedback_func(){
-    query_posts(array('category_name' => 'clients-feedback'));
-    echo '<section class="clients-feedback fadeIn wow" data-wow-delay="0.1s"  id="clients-feedback">';
-    echo '<div class="container">';
-    echo '<h2>';
-    single_cat_title();
-    echo '</h2>';
-    echo '<div class="row">';
-    echo '<div class="slick-slider-clients">';
-    while (have_posts()) {
-
-        the_post();
-        get_template_part('/partials/_clients-feedback');
-
-    }
-    echo '</div></div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('clients-feedback', 'clientsfeedback_func');
-
-
-
-function blog_func(){
-    query_posts(array('category_name' => 'blog'));
-    echo '<section class="blog fadeIn wow" data-wow-delay="0.1s" id="blog">';
-    echo '<div class="container">';
-    echo '<h2>';
-    single_cat_title();
-    echo '</h2>';
-    echo '<div class="row">';
-    while (have_posts()) {
-
-        the_post();
-        get_template_part('/partials/_blog');
-
-    }
-    echo '</div></div></section>';
-    wp_reset_query();
-}
-add_shortcode('blog', 'blog_func');
-
-
-
-function blogfront_func(){
-    query_posts(array('category_name' => 'blog'));
-    echo '<section class="blog fadeIn wow" data-wow-delay="0.1s" id="blog">';
-    echo '<div class="container">';
-    echo '<h2>';
-    single_cat_title();
-    echo '</h2>';
-    echo '<div class="row">';
-    $i = 1;
-    while (have_posts() && $i < 4) {
-
-        the_post();
-        get_template_part('/partials/_blog');
-        $i++;
-
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/home-page-about-us');
+        };
     };
-    echo '</div>';
-    echo '<a class="more-link" href='. home_url("/category/blog/"). ' target="_blank"><span>Більше</span></a>';
-    echo '</div></section>';
+    unset($Bsb4Design);
+
+    echo '</div></div></section>';
     wp_reset_query();
 }
-add_shortcode('blogfront', 'blogfront_func');
+add_shortcode('about_us', 'home_page_about_us_func');
+
+function home_page_services_func(){
+    query_posts(array('category_name' => 'services'));
+
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/home-page-services');
+        };
+    };
+    unset($Bsb4Design);
+
+    echo '</div></div></section>';
+    wp_reset_query();
+}
+add_shortcode('home_page_services', 'home_page_services_func');

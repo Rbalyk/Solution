@@ -1,0 +1,35 @@
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: transparent;
+  padding: 25px 30px 25px 60px;
+  margin: 0;
+  #logo{
+    span{
+      display: block;
+      font-family: $main-font;
+      font-style: normal;
+      &:first-child{
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+      }
+      &:last-child{
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #F4F4F4;
+      }
+    }
+  }
+}
+.logged-in{
+  header{
+    top: 32px;
+  }
+}

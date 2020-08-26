@@ -9,11 +9,19 @@
 
 // begins template. -------------------------------------------------------------------------
 get_header();
-get_sidebar();
-?> 
+?>
                 <main id="main" class="col-md-<?php echo \BootstrapBasic4\Bootstrap4Utilities::getMainColumnSize(); ?> site-main" role="main">
                     <?php
-                    if (have_posts()) {
+                    if ( is_front_page() ) {
+                        $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+                        if ( have_posts() ) {
+                            while ( have_posts() ) {
+                                the_post();
+                                the_content($Bsb4Design->continueReading(true));
+                            };
+                        };
+                        unset($Bsb4Design);
+                    } else if (have_posts()) {
                         $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                         while (have_posts()) {
                             the_post();

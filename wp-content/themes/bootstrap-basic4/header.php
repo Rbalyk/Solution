@@ -27,29 +27,10 @@ if (!is_scalar($container_class) || empty($container_class)) {
     <body <?php body_class(); ?>>
         <div class="<?php echo $container_class; ?> page-container">
             <header class="page-header page-header-sitebrand-topbar">
-                <div class="row row-with-vspace site-branding">
-                    <div class="col-md-6 site-title">
-                        <h1 class="site-title-heading">
-                            <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-                        </h1>
-                        <div class="site-description">
-                            <small>
-                                <?php bloginfo('description'); ?> 
-                            </small>
-                        </div>
-                    </div>
-                    <div class="col-md-6 page-header-top-right">
-                        <div class="sr-only">
-                            <a href="#content" title="<?php esc_attr_e('Skip to content', 'bootstrap-basic4'); ?>"><?php _e('Skip to content', 'bootstrap-basic4'); ?></a>
-                        </div>
-                        <?php if (is_active_sidebar('header-right')) { ?> 
-                        <div class="float-right">
-                            <?php dynamic_sidebar('header-right'); ?> 
-                        </div>
-                        <div class="clearfix"></div>
-                        <?php } // endif; ?> 
-                    </div>
-                </div><!--.site-branding-->
+                <a id="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+                    <span><?php bloginfo('name'); ?></span>
+                    <span>digital agency</span>
+                </a>
                 <?php if (has_nav_menu('primary') || is_active_sidebar('navbar-right')) { ?> 
                 <div class="row main-navigation">
                     <div class="col-md-12">
