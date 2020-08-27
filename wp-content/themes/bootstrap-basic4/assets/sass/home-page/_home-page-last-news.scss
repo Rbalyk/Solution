@@ -1,0 +1,160 @@
+@import "../mixins/different";
+@import "../mixins/buttons";
+@import "../mixins/titles";
+@import "../variable";
+
+#home_page_last_news{
+  @include section();
+  h2{
+    @include section-title();
+    color: $text-color-black;
+    max-width: 197px;
+    margin-bottom: 50px;
+    margin-left: 62px;
+  }
+  .subtitle{
+    @include section-subtitle();
+    color: rgba(51, 51, 51, 0.8);
+    margin-left: 62px;
+    &:after{
+      background: $text-color-black;
+    }
+  }
+  .custom-row{
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .col-xl-4{
+      margin-bottom: 16px;
+      .item-blog-post{
+        position: relative;
+        .category-name{
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: inline-block;
+          z-index: 3;
+          .categories-icon{
+            display: none;
+          }
+          ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+              margin: 0;
+              a{
+                min-width: 110px;
+                padding: 4px 10px;
+                text-transform: lowercase;
+                color: $white;
+                font-size: 14px;
+                line-height: 17px;
+                font-family: $main-font;
+                display: block;
+                cursor: pointer;
+                text-decoration: none;
+                text-align: center;
+                background: $black;
+                transition: all ease 0.3s;
+                &:hover{
+                  min-width: 125px;
+                  padding: 7px 10px;
+                  color: $black;
+                  background: $white;
+                }
+              }
+              &:last-child{
+                display: none;
+              }
+            }
+          }
+        }
+        a{
+          display: block;
+          overflow: hidden;
+          z-index: 0;
+          &:hover{
+            .image-wrapper{
+              &:before{
+                transform: scale3d(3,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+              }
+              img{
+                transform: scale3d(1.35,1.35,1.35);
+              }
+            }
+          }
+          .image-wrapper{
+            height: 232px;
+            max-height: 232px;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            margin-bottom: 18px;
+            &:before {
+              position: absolute;
+              top: 0;
+              left: 60px;
+              width: 100%;
+              height: 100%;
+              background: rgba(255,255,255,.4);
+              content: '';
+              transition: transform 0.8s;
+              transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+              z-index: 1;
+            }
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              transition: all ease 0.3s;
+              position: relative;
+              z-index: 0;
+            }
+          }
+          h3{
+            font-family: $main-font;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: $text-color-black;
+            min-height: 64px;
+            margin-bottom: 0;
+            @media all and (max-width: 768px){
+              min-height: inherit;
+              margin-bottom: 12px;
+            }
+          }
+          .post-time{
+            font-size: 14px;
+            line-height: 17px;
+            display: block;
+            margin-bottom: 12px;
+            font-family: $main-font;
+            color: $text-color-black;
+          }
+          .text{
+            font-size: 16px;
+            line-height: 20px;
+            font-family: $main-font;
+            color: $text-color-black;
+            margin-bottom: 15px;
+          }
+        }
+
+      }
+
+
+    }
+  }
+
+  .more-link{
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 12px 30px;
+    @include btn();
+    @include btn-white();
+  }
+}

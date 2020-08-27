@@ -2,8 +2,7 @@
 @import "../variable";
 
 #home_page_portfolio_slider{
-  @include section();
-  display: flex;
+   display: flex;
   .item-project{
     height: 635px;
     display: flex;
@@ -15,12 +14,69 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
-    pre{
-      color: $white;
+    pointer-events: none;
+    padding: 0 40px 25px 0;
+    position: relative;
+    @media all and (max-width: 991px) {
+      height: 500px;
     }
-    h3{
-      min-width: 100%;
-      text-align: right;
+    &:before{
+      content:'';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: rgba(51, 51, 51, 0.3);
+      z-index: 1;
+    }
+    .text-wrapper{
+      text-align: left;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      pre{
+        color: $white;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        font-family: $main-font;
+        margin: 0;
+        text-align: left;
+      }
+      h3{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: $white;
+        font-family: $main-font;
+        min-width: 100%;
+        text-align: left;
+      }
+    }
+
+  }
+
+  .slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    &.left{
+      left: 60px;
+      @media all and (max-width: 768px) {
+        left: 45px;
+      }
+    }
+    &.right{
+      right: 30px;
+      @media all and (max-width: 768px) {
+        right: 15px;
+      }
     }
   }
 }

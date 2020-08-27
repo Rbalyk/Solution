@@ -134,6 +134,41 @@ function home_page_portfolio_func(){
         };
     };
     unset($Bsb4Design);
+    echo '</section>';
     wp_reset_query();
 }
 add_shortcode('home_page_portfolio', 'home_page_portfolio_func');
+
+function home_page_last_news_func(){
+    query_posts(array('category_name' => 'blog'));
+    echo '<section class="home_page_last_news" id="home_page_last_news">';
+    echo '<div class="container">';
+    echo '<div class="row">';
+    echo '<div class="col-md-12">';
+    echo '<div class="subtitle">';
+      the_archive_description( '<div class="taxonomy-description">', '</div>' );
+    echo '</div>';
+    echo '<h2>';
+        single_cat_title();
+    echo '</h2>';
+    echo '</div>';
+    echo '<div class="custom-row">';
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+
+    if ( have_posts() ) {
+        $i = 1;
+        while ( have_posts() && $i < 4 ) {
+            the_post();
+
+            get_template_part('template-parts/custom/home-page-last-news');
+
+            $i++;
+        };
+    };
+    unset($Bsb4Design);
+    echo '</div>';
+    echo '<a class="more-link" href='. home_url("/category/blog/"). ' target="_blank">БІЛЬШЕ НОВИН</a>';
+    echo '</div></section>';
+    wp_reset_query();
+}
+add_shortcode('home_page_last_news', 'home_page_last_news_func');

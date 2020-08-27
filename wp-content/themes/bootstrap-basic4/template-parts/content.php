@@ -51,7 +51,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                 if (!empty($categories_list)) {
             ?> 
             <span class="cat-links">
-                <?php $Bsb4Design->categoriesList($categories_list); ?> 
+                <?php $Bsb4Design->categoriesList($categories_list)[0]->name; ?>
             </span>
             <?php } // End if categories ?> 
 
@@ -76,4 +76,4 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
         </div><!--.entry-meta-comment-tools-->
     </footer><!-- .entry-meta -->
 </article><!-- #post-## -->
-<?php unset($Bsb4Design); ?> 
+<?php unset($Bsb4Design); ?>

@@ -104,6 +104,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                 wp_enqueue_script('comment-reply');
             }
             wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.4.1', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
+            wp_enqueue_script('slick', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array('jquery'), '1.8.0', true);
             wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.2.5', true);
         }// enqueueScriptsAndStyles
 
