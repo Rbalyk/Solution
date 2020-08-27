@@ -1,0 +1,86 @@
+@import "../mixins/different";
+@import "../mixins/titles";
+@import "../variable";
+
+#home_page_services{
+  background: $black;
+  @include section();
+  padding-bottom: 64px;
+  h2{
+    @include section-title();
+    color: $white;
+    max-width: 320px;
+    margin-bottom: 50px;
+    margin-left: 62px;
+  }
+  .subtitle{
+    @include section-subtitle();
+    color: rgba(244, 244, 244, 0.8);
+    margin-left: 62px;
+    &:after{
+      background: $white;
+    }
+  }
+  .custom-row{
+    min-width: 100%;
+    display: flex;
+    padding: 0 8px;
+    flex-wrap: wrap;
+    .col-xl-3{
+      padding: 0 8px;
+      margin-bottom: 16px;
+      .item-service{
+        padding: 15px 10px 85px 40px;
+        border: 1px solid rgba(244, 244, 244, 0.1);
+        position: relative;
+        height: 100%;
+        img{
+          margin-bottom: 20px;
+          width: 35px;
+        }
+        h3{
+          font-family: $main-font;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: $subtitle-color-white;
+          margin-bottom: 15px;
+          margin-top: 20px;
+        }
+        .text{
+          font-size: 16px;
+          line-height: 20px;
+          font-family: $main-font;
+          color: $text-color-white;
+          margin-bottom: 15px;
+        }
+        a{
+          font-family: $main-font;
+          color: $text-color-black;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          background: $white;
+          width: calc(100% - 70px);
+          display: flex;
+          padding: 9px;
+          justify-content: center;
+          text-align: center;
+          border-radius: 10px;
+          border: 1px solid $white;
+          transition: all ease 0.3s;
+          position: absolute;
+          left: 40px;
+          bottom: 40px;
+          &:hover{
+            background: transparent;
+            color: $white;
+
+          }
+        }
+      }
+    }
+  }
+
+
+}

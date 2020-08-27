@@ -1,0 +1,26 @@
+@import "../mixins/different";
+@import "../variable";
+
+#home_page_portfolio_slider{
+  @include section();
+  display: flex;
+  .item-project{
+    height: 635px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-decoration: none;
+    color: $white;
+    flex-direction: column;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    pre{
+      color: $white;
+    }
+    h3{
+      min-width: 100%;
+      text-align: right;
+    }
+  }
+}

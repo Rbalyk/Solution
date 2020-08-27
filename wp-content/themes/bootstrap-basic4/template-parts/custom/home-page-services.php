@@ -9,10 +9,14 @@
 
 $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 ?>
-<div class="col-md-3 item-service">
-    <img src="<?php the_field('icon'); ?>"/>
-    <h3 class="text"><?php the_field('text'); ?></h3>
-    <p class="text"><?php the_field('text'); ?></p>
-    <a href="<?php echo $category_link; ?>" target="_blank" class='btn-simple btn-transparent'><?php the_field('button_detail'); ?></a>
+<div class="col-xl-3 col-md-6 col-sm-12">
+    <div class='item-service'>
+        <?php the_field('icon'); ?>
+        <h3 class="text"><?php the_field('title'); ?></h3>
+        <p class="text"><?php the_field('text'); ?></p>
+        <a href="<?php echo get_site_url(); the_field('services_name_for_url') ?>" target="_blank" class='btn-simple btn-transparent'>
+            <?php the_field('button_detail'); ?>
+        </a>
+    </div>
 </div>
 <?php unset($Bsb4Design); ?>

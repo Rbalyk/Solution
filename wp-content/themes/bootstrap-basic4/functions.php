@@ -69,7 +69,6 @@ unset($ThemeHelp);
 //////////////////////////////////////////SHORTCODES/////////////////////////////////////////
 function home_page_header_func(){
     query_posts(array('category_name' => 'home_page_header'));
-
     $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     if ( have_posts() ) {
         while ( have_posts() ) {
@@ -78,16 +77,12 @@ function home_page_header_func(){
         };
     };
     unset($Bsb4Design);
-
-    echo '</div></div></section>';
     wp_reset_query();
 }
 add_shortcode('home_page_header', 'home_page_header_func');
 
 function home_page_about_us_func(){
     query_posts(array('category_name' => 'about_us'));
-
-
     $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     if ( have_posts() ) {
         while ( have_posts() ) {
@@ -96,15 +91,24 @@ function home_page_about_us_func(){
         };
     };
     unset($Bsb4Design);
-
-    echo '</div></div></section>';
     wp_reset_query();
 }
 add_shortcode('about_us', 'home_page_about_us_func');
 
 function home_page_services_func(){
-    query_posts(array('category_name' => 'services'));
-
+    query_posts(array('category_name' => 'best_services'));
+    echo '<section class="home_page_services" id="home_page_services">';
+    echo '<div class="container">';
+    echo '<div class="row">';
+    echo '<div class="col-md-12">';
+    echo '<div class="subtitle">';
+      the_archive_description( '<div class="taxonomy-description">', '</div>' );
+    echo '</div>';
+    echo '<h2>';
+        single_cat_title();
+    echo '</h2>';
+    echo '</div>';
+    echo '<div class="custom-row">';
     $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     if ( have_posts() ) {
         while ( have_posts() ) {
@@ -113,8 +117,23 @@ function home_page_services_func(){
         };
     };
     unset($Bsb4Design);
-
+    echo '</div>';
     echo '</div></div></section>';
     wp_reset_query();
 }
 add_shortcode('home_page_services', 'home_page_services_func');
+
+function home_page_portfolio_func(){
+    query_posts(array('category_name' => 'portfolio'));
+    echo '<section class="home_page_portfolio_slider" id="home_page_portfolio_slider">';
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/home-page-portfolio');
+        };
+    };
+    unset($Bsb4Design);
+    wp_reset_query();
+}
+add_shortcode('home_page_portfolio', 'home_page_portfolio_func');

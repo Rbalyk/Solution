@@ -1,6 +1,6 @@
-@import "mixins/buttons";
-@import "mixins/titles";
-@import "mixins/different";
+@import "../mixins/buttons";
+@import "../mixins/titles";
+@import "../mixins/different";
 
 #home_page_about_us{
   @include section();
