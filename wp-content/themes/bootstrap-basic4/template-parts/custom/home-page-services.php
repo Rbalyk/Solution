@@ -9,7 +9,7 @@
 
 $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 ?>
-<div class="col-xl-3 col-md-6 col-sm-12">
+<div class="col-xl-3 col-md-6 col-sm-12 fadeInUp wow" data-wow-offset="10" data-wow-delay="0.3s">
     <div class='item-service'>
         <?php the_field('icon'); ?>
         <h3 class="text"><?php the_field('title'); ?></h3>

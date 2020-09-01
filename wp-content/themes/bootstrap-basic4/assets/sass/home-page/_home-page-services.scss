@@ -3,7 +3,10 @@
 @import "../variable";
 
 #home_page_services{
-  background: $black;
+  background: url("../../assets/img/black.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   @include section();
   padding-bottom: 64px;
   h2{

@@ -12,27 +12,35 @@
   justify-content: center;
   align-items: center;
   transition: all ease 0.3s;
+  &:hover{
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(55,55,55,0.3);
+  }
 }
 
 @mixin btn-transparent(){
-  color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
   text-transform: capitalize;
   &:hover{
-    color: rgba(0, 0, 0, 0.8);
-    border-color: rgba(0, 0, 0, 0.8);
+    color: rgba(55, 55, 55, 1);
+    border-color: rgba(55, 55, 55, 1);
     background: #ffffff;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(55,55,55,0.3);
   }
 }
 
 @mixin btn-white(){
-  color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: rgba(55, 55, 55, 1);
+  border: 1px solid rgba(55, 55, 55, 1);
   text-transform: capitalize;
   background: #ffffff;
   &:hover{
-    color: rgba(255, 255, 255, 0.8);
-    border-color: rgba(0, 0, 0, 0.8);
-    background: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(55, 55, 55, 1);
+    background: rgba(55, 55, 55, 1);
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(55,55,55,0.3);
   }
 }

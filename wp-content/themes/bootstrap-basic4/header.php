@@ -31,38 +31,39 @@ if (!is_scalar($container_class) || empty($container_class)) {
                     <span><?php bloginfo('name'); ?></span>
                     <span>digital agency</span>
                 </a>
-                <?php if (has_nav_menu('primary') || is_active_sidebar('navbar-right')) { ?> 
-                <div class="row main-navigation">
-                    <div class="col-md-12">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bootstrap-basic4-topnavbar" aria-controls="bootstrap-basic4-topnavbar" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'bootstrap-basic4'); ?>">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div id="bootstrap-basic4-topnavbar" class="collapse navbar-collapse">
-                                <?php 
-                                wp_nav_menu(
-                                    array(
-                                        'depth' => '2',
-                                        'theme_location' => 'primary', 
-                                        'container' => false, 
-                                        'menu_id' => 'bb4-primary-menu',
-                                        'menu_class' => 'navbar-nav mr-auto', 
-                                        'walker' => new \BootstrapBasic4\BootstrapBasic4WalkerNavMenu()
-                                    )
-                                ); 
-                                ?> 
-                                <div class="float-md-right">
-                                    <?php dynamic_sidebar('navbar-right'); ?> 
-                                </div>
-                                <div class="clearfix"></div>
-                            </div><!--.navbar-collapse-->
-                            <div class="clearfix"></div>
-                        </nav>
+                <div class="right-header">
+                    <div class="social-media">
+                        <?php dynamic_sidebar('social-media'); ?>
                     </div>
-                </div><!--.main-navigation-->
-                <?php } else { ?> 
-                <!-- the navigation is skipped due to there is no menu or active widgets on navbar-right. -->
-                <?php }// endif; ?> 
+                    <button class="toggle-navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="overlay"></div>
+                <nav class="main-navigation">
+                    <?php
+                        wp_nav_menu(
+                        array(
+                            'depth' => '2',
+                            'theme_location' => 'primary',
+                            'container' => false,
+                            'menu_id' => 'bb4-primary-menu',
+                            'menu_class' => 'navbar-nav mr-auto',
+                            'walker' => new \BootstrapBasic4\BootstrapBasic4WalkerNavMenu()
+                        )
+                    );
+                    ?>
+                    <div class="social-media">
+                        <?php dynamic_sidebar('navigation-short-contact'); ?>
+                    </div>
+                    <button class="btn-leave-application">ЗАЛИШИТИ ЗАЯВКУ</button>
+                    <button class="btn-complete-brief">ЗАПОВНИТИ БРИФ</button>
+                    <div class="social-media">
+                        <?php dynamic_sidebar('navigation-social-media'); ?>
+                    </div>
+                </nav>
             </header><!--.page-header-->
 
 

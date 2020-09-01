@@ -105,6 +105,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
             }
             wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.4.1', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
             wp_enqueue_script('slick', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array('jquery'), '1.8.0', true);
+            wp_enqueue_script('wow', get_template_directory_uri() . '/assets/js/wow.min.js', array('jquery'), '1.0.3', true);
             wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.2.5', true);
         }// enqueueScriptsAndStyles
 
@@ -125,36 +126,19 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function registerSidebars()
         {
+
             register_sidebar(array(
-                'name'          => __('Sidebar left', 'bootstrap-basic4'),
-                'id'            => 'sidebar-left',
-                'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</aside>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
+                'name'          => __('Navigation Short Contact', 'bootstrap-basic4'),
+                'id'            => 'navigation-short-contact',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '',
+                'after_title'   => '',
             ));
 
             register_sidebar(array(
-                'name'          => __('Sidebar right', 'bootstrap-basic4'),
-                'id'            => 'sidebar-right',
-                'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</aside>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
-            ));
-
-            register_sidebar(array(
-                'name'          => __('Header right', 'bootstrap-basic4'),
-                'id'            => 'header-right',
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
-            ));
-
-            register_sidebar(array(
-                'name'          => __('Navigation bar right', 'bootstrap-basic4'),
-                'id'            => 'navbar-right',
+                'name'          => __('Navigation Social Media', 'bootstrap-basic4'),
+                'id'            => 'navigation-social-media',
                 'before_widget' => '',
                 'after_widget'  => '',
                 'before_title'  => '',

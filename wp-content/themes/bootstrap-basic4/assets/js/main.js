@@ -10,6 +10,8 @@
 jQuery(document).ready(function($) {
 
     $('html').removeClass('no-js').addClass('js');
+
+    new WOW().init();
     $('#home_page_portfolio_slider').slick({
         infinite: true,
         slidesToShow: 3,
@@ -33,4 +35,39 @@ jQuery(document).ready(function($) {
             }
         ]
     });
+
+    $('.order-service label input').focus(function () {
+        $(this).parents('.form-item').addClass('has-label');
+    }).blur(function () {
+        if ($(this).val() === '') {
+            $(this).parents('.form-item').removeClass('has-label');
+        }
+    });
+
+    $('.order-service label').each(function () {
+        if ($(this).find('input').val()) {
+            $(this).addClass('has-label');
+        }
+    });
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 100) {
+            $('.page-header.page-header-sitebrand-topbar').addClass('header-white');
+        } else {
+            $('.page-header.page-header-sitebrand-topbar').removeClass('header-white');
+        }
+    });
+
+    $('.toggle-navigation').click( function () {
+       $(this).toggleClass('btn-toggle');
+       $('.main-navigation').toggleClass('menu-toggle');
+       $('.overlay').toggleClass('active');
+    });
+
+    $('.overlay').click( () => {
+        $('.overlay').removeClass('active');
+        $('.main-navigation').removeClass('menu-toggle');
+        $('.toggle-navigation').removeClass('btn-toggle');
+    })
+
 });

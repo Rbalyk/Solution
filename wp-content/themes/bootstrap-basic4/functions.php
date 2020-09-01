@@ -101,10 +101,10 @@ function home_page_services_func(){
     echo '<div class="container">';
     echo '<div class="row">';
     echo '<div class="col-md-12">';
-    echo '<div class="subtitle">';
+    echo '<div class="subtitle fadeIn wow" data-wow-offset="10" data-wow-delay="0.1s">';
       the_archive_description( '<div class="taxonomy-description">', '</div>' );
     echo '</div>';
-    echo '<h2>';
+    echo '<h2 class="fadeIn wow" data-wow-offset="10" data-wow-delay="0.3s">';
         single_cat_title();
     echo '</h2>';
     echo '</div>';
@@ -125,7 +125,7 @@ add_shortcode('home_page_services', 'home_page_services_func');
 
 function home_page_portfolio_func(){
     query_posts(array('category_name' => 'portfolio'));
-    echo '<section class="home_page_portfolio_slider" id="home_page_portfolio_slider">';
+    echo '<section class="home_page_portfolio_slider fadeIn wow" data-wow-offset="10" data-wow-delay="0.1s" id="home_page_portfolio_slider">';
     $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     if ( have_posts() ) {
         while ( have_posts() ) {
@@ -145,10 +145,10 @@ function home_page_last_news_func(){
     echo '<div class="container">';
     echo '<div class="row">';
     echo '<div class="col-md-12">';
-    echo '<div class="subtitle">';
+    echo '<div class="subtitle fadeIn wow" data-wow-offset="10" data-wow-delay="0.1s">';
       the_archive_description( '<div class="taxonomy-description">', '</div>' );
     echo '</div>';
-    echo '<h2>';
+    echo '<h2 class="fadeIn wow" data-wow-offset="10" data-wow-delay="0.3s">';
         single_cat_title();
     echo '</h2>';
     echo '</div>';
@@ -167,7 +167,7 @@ function home_page_last_news_func(){
     };
     unset($Bsb4Design);
     echo '</div>';
-    echo '<a class="more-link" href='. home_url("/category/blog/"). ' target="_blank">БІЛЬШЕ НОВИН</a>';
+    echo '<a class="more-link fadeInUp wow" data-wow-offset="10" data-wow-delay="0.1s" href='. home_url("/category/blog/"). ' target="_blank">БІЛЬШЕ НОВИН</a>';
     echo '</div></section>';
     wp_reset_query();
 }

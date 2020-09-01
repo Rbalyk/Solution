@@ -1,0 +1,116 @@
+@import "../mixins/different";
+@import "../mixins/buttons";
+@import "../mixins/titles";
+@import "../variable";
+.order-service{
+  @include section();
+  background: url("../../assets/img/home-form.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  h2{
+    @include section-title();
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #F4F4F4;
+    margin-bottom: 15px;
+    max-width: 650px;
+    width: 100%;
+  }
+  .subtitle{
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F4F4F4;
+    margin-bottom: 30px;
+    display: block;
+  }
+  .form-wrapper{
+    position: relative;
+    max-width: 224px;
+    @media all and (max-width: 991px) {
+      max-width: 100%;
+    }
+    input[type="submit"] {
+      padding: 12px 30px;
+      @include btn();
+      @include btn-white();
+      position: absolute;
+      right: -390px;
+      bottom: 0;
+      @media all and (max-width: 991px) {
+        right: inherit;
+        position: relative;
+        margin-top: 30px;
+      }
+    }
+    br,.ajax-loader{
+      display: none;
+    }
+    label{
+      position: relative;
+      margin-bottom: 0;
+      width: 100%;
+      &:first-child{
+        margin-bottom: 20px;
+      }
+      br{
+        display: none;
+      }
+      input{
+        padding: 6px 0 6px 0;
+        border-radius: 0;
+        border-color: transparent transparent #757575 transparent;
+        box-shadow: none;
+        color: $white;
+        display: block;
+        width: 100%;
+        height: 39px;
+        font-size: 18px;
+        line-height: 1.42857;
+        background: transparent;
+        font-family: $main-font;
+        background-image: none;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        &:focus{
+          outline: none;
+        }
+      }
+      .control-label{
+        position: absolute;
+        font-style: normal;
+        font-weight: 300;
+        font-family: $main-font;
+        font-size: 14px;
+        line-height: 17px;
+        z-index: 5;
+        bottom: 0;
+        height: auto;
+        width: 100%;
+        color: #fff;
+        transition: transform .3s;
+        transform-origin: 0 50%;
+        top: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+      }
+    }
+
+    .has-label{
+      .control-label{
+        transform: translateY(-25px) scale(.75)!important;
+        font-weight: 700!important;
+      }
+      input{
+        border-color: transparent transparent #ffffff transparent;
+      }
+    }
+  }
+
+
+
+}
