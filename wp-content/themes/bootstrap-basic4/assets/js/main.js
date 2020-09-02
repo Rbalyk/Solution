@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
         ]
     });
 
-    $('.order-service label input').focus(function () {
+    $('.form-wrapper label input,.form-wrapper label textarea').focus(function () {
         $(this).parents('.form-item').addClass('has-label');
     }).blur(function () {
         if ($(this).val() === '') {
@@ -44,8 +44,12 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.order-service label').each(function () {
+    $('.form-wrapper label').each(function () {
         if ($(this).find('input').val()) {
+            $(this).addClass('has-label');
+        }
+
+        if ($(this).find('textarea').val()) {
             $(this).addClass('has-label');
         }
     });
@@ -64,8 +68,16 @@ jQuery(document).ready(function($) {
        $('.overlay').toggleClass('active');
     });
 
+    $('.btn-leave-application').click( function () {
+        $('.main-navigation').removeClass('menu-toggle');
+        $('.toggle-navigation').removeClass('btn-toggle');
+        $('.overlay').addClass('active');
+        $('#application-form').addClass('active');
+    });
+
     $('.overlay').click( () => {
         $('.overlay').removeClass('active');
+        $('#application-form').removeClass('active');
         $('.main-navigation').removeClass('menu-toggle');
         $('.toggle-navigation').removeClass('btn-toggle');
     })

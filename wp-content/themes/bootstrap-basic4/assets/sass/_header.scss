@@ -1,3 +1,5 @@
+@import "mixins/buttons";
+@import "variable";
 @import "variable";
 header.page-header.page-header-sitebrand-topbar{
   position: absolute;
@@ -155,6 +157,7 @@ header.page-header.page-header-sitebrand-topbar{
     top: 0;
     background: #ffffff;
     padding: 10px 20px;
+    box-shadow: 0 4px 20px rgba(55,55,55,0.2);
     #logo{
       span{
         color: $text-color-black;
@@ -166,7 +169,68 @@ header.page-header.page-header-sitebrand-topbar{
       }
     }
   }
+  #application-form{
+    position: fixed;
+    height: 100vh;
+    z-index: 999;
+    background: #ffffff;
+    top: 0;
+    right: -100vw;
+    width: calc(100vw - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all ease .6s;
+    &.active{
+      right: 0;
+      opacity: 1;
+    }
+    #send-application-form{
+      max-width: 644px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .left-part,.right-part{
+        max-width: 277px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      >p{
+        min-width: 100%;
+        text-align: center;
+      }
+    }
+    input, textarea{
+      margin-bottom: 30px;
+      border-color: transparent transparent $text-color-black transparent;
+      color: $text-color-black;
+      font-size: 18px;
+    }
+    .control-label{
+      color: $text-color-black;
+    }
 
+    input{
+      height: 39px;
+    }
+
+    textarea{
+      height: 108px;
+      resize: none;
+    }
+
+    input[type="submit"] {
+      @include btn();
+      background: $text-color-black;
+      color: $white;
+      border-radius: 2px;
+      min-width: 227px;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+  }
 }
 .logged-in{
   header{

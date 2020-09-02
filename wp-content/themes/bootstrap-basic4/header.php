@@ -64,6 +64,10 @@ if (!is_scalar($container_class) || empty($container_class)) {
                         <?php dynamic_sidebar('navigation-social-media'); ?>
                     </div>
                 </nav>
+                <div id="application-form">
+                    <?php echo do_shortcode( '[contact-form-7 id="189" title="Відправити заявку"]' ); ?>
+                </div>
+
             </header><!--.page-header-->
 
 
