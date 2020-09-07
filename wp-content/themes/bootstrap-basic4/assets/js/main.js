@@ -36,6 +36,82 @@ jQuery(document).ready(function($) {
         ]
     });
 
+
+    $('#technical-task').change( (event) => {
+        const reader = new FileReader();
+        const file = event.target.files[0];
+        reader.onloadend = () => {
+            $('#technical-task').value = reader.result;
+            console.log(event.target.files[0].name)
+            $('.btn-add-file').text(event.target.files[0].name);
+            $('.input-file-wrapper').addClass('fileAdded');
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    });
+
+    $('.removeFile').click( function () {
+        $('#technical-task').replaceWith(  $('#technical-task').val('').clone( true ) );
+        $('.input-file-wrapper').removeClass('fileAdded');
+        $('.btn-add-file').text('прикріпити файл');
+    })
+
+    let stepperCounter = 0;
+
+    $('#brief-form .next-step').click( function () {
+        const briefSteps = [$('.brief-form-steps .first-step'),$('.brief-form-steps .second-step'),$('.brief-form-steps .third-step')];
+        const stepIndex = briefSteps.findIndex((item) => item.hasClass('active'));
+        briefFormStepper(briefSteps, stepIndex, 'next');
+    });
+
+    $('#brief-form .back-step').click( function () {
+        const briefSteps = [$('.brief-form-steps .first-step'),$('.brief-form-steps .second-step'),$('.brief-form-steps .third-step')];
+        const stepIndex = briefSteps.findIndex((item) => item.hasClass('active'));
+        briefFormStepper(briefSteps, stepIndex, 'back');
+    });
+
+    function briefFormStepper(formsArray, indexForm, type){
+        if(type === 'next'){
+            formsArray.forEach( (item, index) => {
+                if(indexForm === index){
+                    formsArray[indexForm].removeClass('active');
+                    formsArray[indexForm + 1].addClass('active');
+                    hideStepperButton(indexForm + 1);
+                }
+            });
+        } else if(type === 'back'){
+            formsArray.forEach( (item, index) => {
+                if(indexForm === index){
+                    formsArray[indexForm].removeClass('active');
+                    formsArray[indexForm - 1].addClass('active');
+                    hideStepperButton(indexForm - 1);
+                }
+            });
+        }
+    }
+
+    function hideStepperButton(indexForm) {
+        stepperCounter = indexForm + 1;
+        $('.active-form-step .step-number').text(stepperCounter);
+        const btnBack = $('.back-step');
+        const btnNext = $('.next-step');
+
+        if(indexForm === 0){
+            btnBack.css('display','none');
+        }
+        if(indexForm === 1){
+            btnBack.css('display','flex');
+            btnNext.css('display','flex');
+        }
+        if(indexForm === 2){
+            btnNext.css('display','none');
+        }
+    }
+
+    hideStepperButton(0);
+
     $('.form-wrapper label input,.form-wrapper label textarea').focus(function () {
         $(this).parents('.form-item').addClass('has-label');
     }).blur(function () {
@@ -52,6 +128,11 @@ jQuery(document).ready(function($) {
         if ($(this).find('textarea').val()) {
             $(this).addClass('has-label');
         }
+    });
+
+
+    $('.wpcf7-checkbox .wpcf7-list-item label .wpcf7-list-item-label').click( function (e) {
+        $(this).parent().toggleClass( "checked" );
     });
 
     $(window).scroll(function() {
@@ -75,8 +156,16 @@ jQuery(document).ready(function($) {
         $('#application-form').addClass('active');
     });
 
+    $('.btn-complete-brief').click( function () {
+        $('.main-navigation').removeClass('menu-toggle');
+        $('.toggle-navigation').removeClass('btn-toggle');
+        $('.overlay').addClass('active');
+        $('#brief-form').addClass('active');
+    });
+
     $('.overlay').click( () => {
         $('.overlay').removeClass('active');
+        $('#brief-form').removeClass('active');
         $('#application-form').removeClass('active');
         $('.main-navigation').removeClass('menu-toggle');
         $('.toggle-navigation').removeClass('btn-toggle');

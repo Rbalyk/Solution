@@ -67,7 +67,9 @@ if (!is_scalar($container_class) || empty($container_class)) {
                 <div id="application-form">
                     <?php echo do_shortcode( '[contact-form-7 id="189" title="Відправити заявку"]' ); ?>
                 </div>
-
+                <div id="brief-form">
+                    <?php echo do_shortcode( '[contact-form-7 id="190" title="Замовити Бриф"]' ); ?>
+                </div>
             </header><!--.page-header-->
 
 
