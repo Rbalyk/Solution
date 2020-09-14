@@ -1,0 +1,212 @@
+@import "mixins/different";
+@import "mixins/buttons";
+@import "mixins/titles";
+@import "variable";
+
+footer{
+  background: $white;
+  padding: 80px 0;
+  #logo{
+    display: block;
+    margin-bottom: 15px;
+    @media all and (max-width: 991px){
+      margin-bottom: 30px;
+    }
+    span{
+      font-family: $main-font;
+      color: $text-color-black;
+      display: block;
+      width: 100%;
+      &:first-child{
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 44px;
+      }
+      &:last-child{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+  #contacts{
+    display: flex;
+    flex-wrap: wrap;
+    .left-part,.right-part{
+      width: 50%;
+      min-width: 50%;
+      @media all and (max-width: 580px){
+        width: 100%;
+        min-width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .textwidget.custom-html-widget{
+        margin-bottom: 20px;
+      }
+      .widget-title{
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $text-color-black;
+        margin-bottom: 5px;
+      }
+      a{
+        font-size: 14px;
+        line-height: 20px;
+        color: $text-color-black;
+        font-family: $main-font;
+      }
+    }
+    .left-part{
+      padding-right: 10px;
+    }
+    .right-part{
+      padding-left: 10px;
+    }
+  }
+  #menu-footer-menu{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    max-height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -15px;
+    @media all and (max-width: 991px){
+      margin: 10px 0 30px 0;
+    }
+    @media all and (max-width: 580px){
+      max-height: inherit;
+    }
+    li{
+      margin: 0;
+      padding: 0;
+      min-width: 50%;
+      width: 50%;
+      a{
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $black;
+        padding: 15px 0;
+        display: inline-block;
+        transition: all ease 0.5s;
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          transition: all ease 0.5s;
+          background: $text-color-black;
+          position: absolute;
+          left: 0;
+          bottom: 10px
+        }
+        &:hover{
+          color: $text-color-black;
+          background: $white;
+          &:after {
+            width: 100%;
+            height: 2px
+          }
+        }
+      }
+    }
+  }
+  .social-media{
+    min-width: 100%;
+    a{
+      text-align: center;
+      display: block;
+      width: 100%;
+      background: $text-color-black;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: $white;
+      padding: 8px 0;
+      margin-bottom: 10px;
+      border: 1px solid $text-color-black;
+      transition: all ease 0.3s;
+      &:hover{
+        color: $text-color-black;
+        background: $white;
+      }
+    }
+  }
+}
+
+.order-service{
+  @include section();
+  background: url("../../assets/img/home-form.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  h2{
+    @include section-title();
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #F4F4F4;
+    margin-bottom: 15px;
+    max-width: 650px;
+    width: 100%;
+  }
+  .subtitle{
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F4F4F4;
+    margin-bottom: 30px;
+    display: block;
+  }
+  .form-wrapper{
+    max-width: 224px;
+    @media all and (max-width: 991px) {
+      max-width: 100%;
+    }
+    input[type="submit"] {
+      padding: 12px 30px;
+      @include btn-white();
+      position: absolute;
+      right: -390px;
+      bottom: 0;
+      @media all and (max-width: 991px) {
+        right: inherit;
+        position: relative;
+        margin-top: 30px;
+      }
+    }
+    br,.ajax-loader{
+      display: none;
+    }
+    label{
+      &:first-child{
+        margin-bottom: 20px;
+      }
+      input{
+        border-color: transparent transparent #757575 transparent;
+        color: $white;
+        height: 39px;
+        font-size: 18px;
+      }
+      .control-label{
+        color: #fff;
+      }
+    }
+
+    .has-label{
+      input{
+        border-color: transparent transparent #ffffff transparent;
+      }
+    }
+  }
+
+
+
+}

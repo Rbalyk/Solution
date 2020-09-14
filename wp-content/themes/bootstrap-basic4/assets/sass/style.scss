@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 @import "variable";
 @import "header";
-@import "home-page/home-page-header";
-@import "home-page/home-page-about-us";
+@import "header-forms";
+@import "page-header";
+@import "page-about-us";
 @import "home-page/home-page-portfolio";
 @import "home-page/home-page-services";
 @import "home-page/home-page-last-news";
-@import "home-page/home-page-order-form";
+@import "ux-ui-design-page/simple-sections";
+@import "ux-ui-design-page/ux-ui-development";
+@import "footer";
 @import "plugins/slick";
 @import "plugins/animate";
 

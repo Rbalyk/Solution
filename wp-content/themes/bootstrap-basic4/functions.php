@@ -66,6 +66,12 @@ $ThemeHelp = new \BootstrapBasic4\Controller\ThemeHelp();
 $ThemeHelp->addActionsFilters();
 unset($ThemeHelp);
 
+function wp_custom_new_menu(){
+    register_nav_menu('footer-menu', __('Footer Menu'));
+}
+
+add_action('init', 'wp_custom_new_menu');
+
 //////////////////////////////////////////SHORTCODES/////////////////////////////////////////
 function home_page_header_func(){
     query_posts(array('category_name' => 'home_page_header'));
@@ -80,6 +86,34 @@ function home_page_header_func(){
     wp_reset_query();
 }
 add_shortcode('home_page_header', 'home_page_header_func');
+
+function header_design_func(){
+    query_posts(array('category_name' => 'header_design'));
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/header-service-page');
+        };
+    };
+    unset($Bsb4Design);
+    wp_reset_query();
+}
+add_shortcode('header_design', 'header_design_func');
+
+function header_smm_func(){
+    query_posts(array('category_name' => 'header_smm'));
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/header-service-page');
+        };
+    };
+    unset($Bsb4Design);
+    wp_reset_query();
+}
+add_shortcode('header_smm', 'header_smm_func');
 
 function home_page_about_us_func(){
     query_posts(array('category_name' => 'about_us'));
@@ -172,3 +206,45 @@ function home_page_last_news_func(){
     wp_reset_query();
 }
 add_shortcode('home_page_last_news', 'home_page_last_news_func');
+
+function develop_ux_ui_func(){
+    query_posts(array('category_name' => 'develop_ux_ui'));
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/ux-ui-development');
+        };
+    };
+    unset($Bsb4Design);
+    wp_reset_query();
+}
+add_shortcode('develop_ux_ui', 'develop_ux_ui_func');
+
+function our_advantages_func(){
+    query_posts(array('category_name' => 'our-advantages'));
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/our-advantages');
+        };
+    };
+    unset($Bsb4Design);
+    wp_reset_query();
+}
+add_shortcode('our-advantages', 'our_advantages_func');
+
+function how_we_works_func(){
+    query_posts(array('category_name' => 'how_we_works'));
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/how-we-works');
+        };
+    };
+    unset($Bsb4Design);
+    wp_reset_query();
+}
+add_shortcode('how-we-works', 'how_we_works_func');

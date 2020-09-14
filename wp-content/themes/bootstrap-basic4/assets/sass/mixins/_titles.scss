@@ -48,5 +48,8 @@
     top: 50%;
     transform: translateX(-50%);
     background: #333333;
+    @media all and (max-width: 768px) {
+      display: none !important;
+    }
   }
 }

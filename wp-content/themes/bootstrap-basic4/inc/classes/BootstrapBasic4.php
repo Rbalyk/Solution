@@ -128,39 +128,39 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         {
 
             register_sidebar(array(
-                'name'          => __('Navigation Short Contact', 'bootstrap-basic4'),
-                'id'            => 'navigation-short-contact',
+                'name'          => __('Address', 'bootstrap-basic4'),
+                'id'            => 'address',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '<div class="widget-title">',
+                'after_title'   => '</div>',
+            ));
+
+            register_sidebar(array(
+                'name'          => __('Email', 'bootstrap-basic4'),
+                'id'            => 'email',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '<div class="widget-title">',
+                'after_title'   => '</div>',
+            ));
+
+            register_sidebar(array(
+                'name'          => __('Phone', 'bootstrap-basic4'),
+                'id'            => 'phone',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '<div class="widget-title">',
+                'after_title'   => '</div>',
+            ));
+
+            register_sidebar(array(
+                'name'          => __('Social Media', 'bootstrap-basic4'),
+                'id'            => 'social-media',
                 'before_widget' => '',
                 'after_widget'  => '',
                 'before_title'  => '',
                 'after_title'   => '',
-            ));
-
-            register_sidebar(array(
-                'name'          => __('Navigation Social Media', 'bootstrap-basic4'),
-                'id'            => 'navigation-social-media',
-                'before_widget' => '',
-                'after_widget'  => '',
-                'before_title'  => '',
-                'after_title'   => '',
-            ));
-
-            register_sidebar(array(
-                'name'          => __('Footer left', 'bootstrap-basic4'),
-                'id'            => 'footer-left',
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
-            ));
-
-            register_sidebar(array(
-                'name'          => __('Footer right', 'bootstrap-basic4'),
-                'id'            => 'footer-right',
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
             ));
         }// registerSidebars
 

@@ -1,0 +1,74 @@
+@import "../mixins/buttons";
+@import "../mixins/titles";
+@import "../mixins/different";
+
+#our-advantages,#how-we-works{
+  @include section();
+
+  .top-label{
+    @include section-subtitle();
+  }
+  .title{
+    @include section-title();
+    margin-bottom: 90px;
+  }
+
+  .post-wrapper{
+    margin-bottom: 60px;
+    h3{
+      @include text();
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: $white;
+      padding-bottom: 12px;
+      border-bottom: 1px solid;
+      margin-bottom: 20px;
+    }
+    p{
+      margin-bottom: 0;
+      @include text();
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+#how-we-works{
+  background: $black;
+  .col-md-12{
+    display: inherit;
+    .title-wrapper{
+      margin-left: auto;
+      .title,.top-label{
+        color: $white;
+      }
+      .top-label{
+        &:after{
+          background: $white;
+        }
+      }
+    }
+  }
+  .post-wrapper{
+    h3{
+      color: $white;
+      border-bottom-color: $white;
+    }
+    p{
+      color: rgba(244, 244, 244, 0.8);
+    }
+  }
+}
+
+#our-advantages{
+  .post-wrapper{
+    h3{
+      color: $text-color-black;
+      border-bottom-color: $text-color-black;
+    }
+    p{
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}

@@ -61,7 +61,7 @@ if (!is_scalar($container_class) || empty($container_class)) {
                     <button class="btn-leave-application">ЗАЛИШИТИ ЗАЯВКУ</button>
                     <button class="btn-complete-brief">ЗАПОВНИТИ БРИФ</button>
                     <div class="social-media">
-                        <?php dynamic_sidebar('navigation-social-media'); ?>
+                        <?php dynamic_sidebar('social-media'); ?>
                     </div>
                 </nav>
                 <div id="application-form">
