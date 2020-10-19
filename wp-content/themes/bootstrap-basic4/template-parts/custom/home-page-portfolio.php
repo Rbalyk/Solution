@@ -9,7 +9,7 @@
 
 $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 ?>
-<a href="<?php the_permalink(); ?>" target="_blank" class=" item-project" style="background:url(<?php the_field('preview_image'); ?>)">
+<a href="<?php the_permalink(); ?>" class=" item-project" style="background:url(<?php the_field('preview_image'); ?>)">
     <div class="text-wrapper">
         <h3 class="text"><?php the_field('project_title'); ?></h3>
         <pre class="text"><?php the_field('project_small_description'); ?></pre>

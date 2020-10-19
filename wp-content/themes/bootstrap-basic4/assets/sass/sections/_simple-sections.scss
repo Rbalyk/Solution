@@ -1,7 +1,24 @@
 @import "../mixins/buttons";
 @import "../mixins/titles";
 @import "../mixins/different";
+#seo{
+  @include section();
+  background: #F4F4F4;
 
+  .taxonomy-description p {
+    @include section-subtitle();
+  }
+  h2{
+    @include section-title();
+    margin-bottom: 60px;
+  }
+  .seo-text{
+    p{
+      text-align: justify;
+      margin-bottom: 15px !important;
+    }
+  }
+}
 #our-advantages,#how-we-works{
   @include section();
 
@@ -10,11 +27,11 @@
   }
   .title{
     @include section-title();
-    margin-bottom: 90px;
+    margin-bottom: 0;
   }
 
   .post-wrapper{
-    margin-bottom: 60px;
+    margin-top: 140px;
     h3{
       @include text();
       font-weight: 600;
@@ -32,10 +49,46 @@
       line-height: 17px;
     }
   }
+
+  .row{
+    justify-content: space-between;
+  }
+  .col-lg-3{
+    flex: 0 0 26%;
+    max-width: 26%;
+    @media all and (max-width: 991px) {
+      flex: 0 0 49%;
+      max-width: 49%;
+    }
+    @media all and (max-width: 768px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .post-number{
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    font-size: 14px;
+    font-family: $main-font;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
 }
 
 #how-we-works{
   background: $black;
+  .post-number{
+    color: $white;
+    border: 1px solid $white;
+  }
   .col-md-12{
     display: inherit;
     .title-wrapper{
@@ -62,6 +115,10 @@
 }
 
 #our-advantages{
+  .post-number{
+    color: $black;
+    border: 1px solid $black;
+  }
   .post-wrapper{
     h3{
       color: $text-color-black;

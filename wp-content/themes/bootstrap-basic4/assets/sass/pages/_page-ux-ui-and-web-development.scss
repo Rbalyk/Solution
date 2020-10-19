@@ -1,0 +1,224 @@
+@import "../mixins/buttons";
+@import "../mixins/titles";
+@import "../mixins/different";
+
+#ux-ui-development, #web-development {
+  background: #1E1E1C;
+  @include section();
+
+  .top-label {
+    @include section-subtitle();
+    color: $white;
+    &:after{
+      background: $white;
+    }
+  }
+
+  .title {
+    @include section-title();
+    color: $white;
+    margin-bottom: 60px;
+  }
+  .item-post-design{
+    min-width: 20%;
+    margin-bottom: 45px;
+    padding: 15px;
+    transition: all ease 0.3s;
+    height: 327px;
+    &:hover{
+      background: $white;
+      box-shadow: 0px 3px 8px 1px rgba(255, 255, 255, 0.5);
+      svg{
+        position: relative;
+        top: 10px;
+        path{
+          fill: $black;
+          stroke: $black;
+        }
+      }
+      .tilda{
+        circle{
+          fill: transparent;
+          stroke: $black !important;
+        }
+      }
+      .post-title{
+        margin-bottom: 15px !important;
+      }
+      button{
+        background: $black !important;
+        border: 2px solid $black !important;
+        color: $white !important;
+
+      }
+      *{
+        color: $black !important;
+        transition: all ease 0.3s;
+      }
+    }
+    @media all and (max-width: 1200px) {
+      min-width: 33%;
+    }
+    @media all and (max-width: 768px) {
+      min-width: 50%;
+    }
+    @media all and (max-width: 480px) {
+      min-width: 100%;
+    }
+
+    .text-web-development{
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+      color: #f4f4f4;
+      font-family: $main-font;
+    }
+
+    .post-wrapper{
+      *{
+        color: $white;
+        @include text();
+      }
+      .icon{
+        display: flex;
+        width: 100%;
+        min-height: 70px;
+        align-items: center;
+        justify-content: center;
+        svg{
+          transition: all ease 0.3s;
+        }
+        &.tilda{
+          svg{
+            width: 60px;
+            transform: scale(1.1);
+            transform-origin: center;
+            circle{
+              stroke: #ffffff;
+            }
+          }
+        }
+      }
+      .post-title{
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 15px;
+        margin-bottom: 45px;
+        text-align: center;
+        @media all and (max-width: 768px) {
+          margin-bottom: 20px;
+        }
+      }
+      .simple-text{
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(244, 244, 244, 0.8);
+        display: block;
+        margin-bottom: 6px;
+        text-align: center;
+      }
+      .period,.price{
+        display: block;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      button{
+        font-family: $main-font;
+        font-weight: 600;
+        width: 100%;
+        color: $white;
+        background: transparent;
+        font-size: 14px;
+        line-height: 15px;
+        padding: 12px 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border: 2px solid $white;
+        transition: all ease 0.3s;
+        border-radius: 10px;
+        text-transform: lowercase;
+        margin-top: 15px;
+      }
+    }
+  }
+  .web-process,.design-process{
+    margin-top: 60px;
+    h2,h3,p,.text-web-development{
+      color: $white;
+      @include text();
+    }
+    h2{
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 80px;
+      @media all and (max-width: 768px) {
+        margin-bottom: 45px;
+      }
+    }
+    h3{
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+    }
+    p,.text-web-development{
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 0;
+      font-family: $main-font;
+    }
+  }
+
+  .web-process{
+    h2{
+      margin-bottom: 45px;
+    }
+    .row{
+      justify-content: space-between;
+      position: relative;
+      .col-lg-6{
+        flex: 0 0 45%;
+        max-width: 45%;
+        @media all and (max-width: 991px){
+          flex: 0 0 100%;
+          max-width: 100%;
+          h2{
+            margin-bottom: 15px;
+          }
+          &:first-child{
+            margin-bottom: 45px;
+          }
+        }
+      }
+      .line{
+        border: 2px solid $white;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        height: 76%;
+        bottom: 0;
+        @media all and (max-width: 991px){
+          display: none;
+        }
+      }
+    }
+
+  }
+
+  .design-process{
+    .row{
+      margin-bottom: 60px;
+      &:first-child{
+        margin-bottom: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -9,13 +9,13 @@
 
 $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 ?>
-<div class="col-xl-4 col-md-6 col-sm-12 fadeInUp wow" data-wow-offset="10" data-wow-delay="0.3s">
+<div class="col-xl-4 col-md-6 col-sm-12">
     <div class='item-blog-post'>
         <?php
             $categories_list = get_the_category_list(__('', 'bootstrap-basic4'));
             if (!empty($categories_list)) {
         ?>
-        <span class='category-name fadeInLeft wow' data-wow-offset="10" data-wow-delay="0.8s">
+        <span class='category-name'>
             <?php $Bsb4Design->categoriesList($categories_list); ?>
         </span>
         <?php } // End if categories ?>

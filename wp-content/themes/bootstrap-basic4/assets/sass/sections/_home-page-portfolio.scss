@@ -1,7 +1,7 @@
 @import "../mixins/different";
 @import "../variable";
 
-#home_page_portfolio_slider{
+#home_page_portfolio_slider,#category-portfolio{
    display: flex;
   .item-project{
     height: 635px;
@@ -29,7 +29,7 @@
       right: 0;
       bottom: 0;
       top: 0;
-      background: rgba(51, 51, 51, 0.3);
+      background: rgba(51, 51, 51, 0.5);
       z-index: 1;
     }
     .text-wrapper{

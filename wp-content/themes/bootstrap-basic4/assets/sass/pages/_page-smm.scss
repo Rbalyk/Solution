@@ -1,0 +1,363 @@
+@import "mixins/buttons";
+@import "mixins/titles";
+@import "mixins/different";
+
+#setting_facebook_instagram,#smm_administration,#administration_advertising_settings,#what-result-do-you-get,#google-adwords-price{
+  background: #1E1E1C;
+  h2 {
+    @include section-title();
+    color: $white;
+    margin-bottom: 90px;
+    margin-top: 0;
+  }
+  h3{
+    font-family: $main-font;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: $white;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+  p{
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #F4F4F4;
+  }
+}
+
+#smm_administration,#setting_facebook_instagram,#google-adwords-price,#administration_advertising_settings{
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 90px;
+  .row{
+    margin: 0 -15px;
+    padding: 0 15px;
+
+    .item-adwords-post,.item-smm-post{
+      background: #000000;
+      padding: 30px;
+      border-radius: 5px;
+    }
+
+    .price-block{
+      position: relative;
+      padding: 10px 0;
+      margin-bottom: 50px;
+      .price{
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 44px;
+        color: $white;
+      }
+      .month{
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $white;
+      }
+      button{
+        font-family: $main-font;
+        background: $white;
+        border-radius: 33px;
+        position: absolute;
+        right: -15px;
+        bottom: -15px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: $black;
+        border: 0;
+        padding: 10px 25px;
+        transition: all ease 0.3s;
+        text-transform: uppercase;
+        &:hover{
+          box-shadow: 0 4px 20px rgba(244,244,244,0.7);
+        }
+        @media all and (max-width: 991px){
+          position: absolute;
+          right: 0;
+          bottom: 50%;
+          transform: translate(0,50%);
+          font-size: 18px;
+          padding: 12px 25px;
+        }
+      }
+    }
+
+    .taxonomy-description p {
+      @include section-subtitle();
+      color: $white;
+      &:after{
+        background: $white;
+      }
+    }
+
+    .col-xl-4,.col-md-12{
+      padding: 0 8px;
+      @media all and (max-width: 991px){
+        padding: 0 15px;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    .col-xl-4{
+      @media all and (max-width: 991px){
+        margin-bottom: 60px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      h3{
+        padding-left: 30px;
+      }
+      p {
+        margin-bottom: 14px !important;
+      }
+      &:nth-child(3){
+        transform: scale(1.1);
+        position: relative;
+        z-index: 1;
+        @media all and (max-width: 991px){
+          transform: none;
+        }
+        .item-adwords-post,.item-smm-post{
+          background: #FFFFFF;
+          box-shadow: 0px 3px 8px 1px rgba(255, 255, 255, 0.5);
+          .price{
+            color: $black;
+          }
+          .high-price{
+            color: rgba(0,0,0,0.7);
+          }
+          .month{
+            color: $black;
+          }
+          button{
+            background: #000000;
+            color: $white;
+            &:hover{
+              box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            }
+          }
+          p {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#setting_facebook_instagram{
+  position: relative;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+#administration_advertising_settings{
+  padding: 100px 0;
+  .col-xl-4{
+    @media all and (max-width: 1200px){
+      margin-bottom: 30px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(3) {
+      @media all and (max-width: 1200px) {
+        transform: none !important;
+      }
+    }
+
+    .item-smm-post{
+      padding: 30px 15px;
+    }
+    h3{
+      padding-left: 15px !important;
+    }
+    .price-block{
+      border-radius: 5px;
+      padding: 0;
+      margin: 0;
+      .top-block{
+        .high-price{
+          font-family: $main-font;
+          font-size: 24px;
+          line-height: 29px;
+          color: rgba(244, 244, 244, 0.7);
+          position: relative;
+          margin-right: 6px;
+          &:after{
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: #FF0505;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -1px;
+          }
+        }
+        .month{
+          font-family: $main-font;
+          font-weight: 500;
+          font-size: 14px;
+          color: rgba(244, 244, 244, 0.7);
+          line-height: 17px;
+        }
+      }
+      .bottom-block{
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        .price{
+          font-family: $main-font;
+          font-weight: 500;
+          font-size: 36px;
+          line-height: 34px;
+          color: $white;
+          margin-right: 6px;
+        }
+        .month{
+          font-family: $main-font;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: $white;
+        }
+        button{
+          font-family: $main-font;
+          background: $white;
+          border-radius: 33px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: $black;
+          border: 0;
+          right: 0;
+          bottom: 50%;
+          transform: translate(0,50%);
+          padding: 10px 25px;
+          margin-left: auto;
+          transition: all ease 0.3s;
+        }
+      }
+    }
+  }
+}
+
+#what-result-do-you-get{
+  padding-bottom: 80px;
+
+  .what-result-do-you-get {
+    .row{
+      margin-bottom: 60px;
+      &:first-child{
+        margin-bottom: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+      h2,h3,p{
+        color: $white;
+        @include text();
+      }
+      h2{
+        font-family: $main-font;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 80px;
+        @media all and (max-width: 768px) {
+          margin-bottom: 45px;
+        }
+      }
+      h3{
+        font-family: $main-font;
+        margin-bottom: 15px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+      }
+      p{
+        font-family: $main-font;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+#task-google-ads{
+  background: #1E1E1C;
+  @include section();
+
+  @media all and (max-width: 1200px) {
+    .col-lg-1{
+      display: none;
+    }
+  }
+
+  .top-label {
+    @include section-subtitle();
+    color: $white;
+    &:after{
+      background: $white;
+    }
+  }
+
+  .title {
+    @include section-title();
+    color: $white;
+    margin-bottom: 60px;
+    width: 300px;
+  }
+
+  .col-md-12{
+    display: inherit;
+    .title-wrapper{
+      margin-left: auto;
+      @media all and (max-width: 768px) {
+        margin-left: inherit;
+      }
+      .title,.top-label{
+        color: $white;
+      }
+      .top-label{
+        &:after{
+          background: $white;
+        }
+      }
+    }
+  }
+  .col-lg-3{
+    &:first-child,&:nth-child(2),&:nth-child(3){
+      margin-bottom: 80px;
+    }
+    .post-wrapper{
+      .icon{
+        display: block;
+        margin-bottom: 25px;
+        min-width: 100%;
+        text-align: center;
+      }
+      .post-text{
+        color: $white;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        font-family: $main-font;
+      }
+    }
+  }
+}
+

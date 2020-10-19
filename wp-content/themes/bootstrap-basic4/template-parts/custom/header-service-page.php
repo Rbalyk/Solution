@@ -26,14 +26,14 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-md-6 image-block">
-                <div class="img fadeInLeft wow" data-wow-offset="10" data-wow-delay="0.4s" style="background:url(<?php the_post_thumbnail_url(); ?>)"></div>
+                <div class="img" style="background:url(<?php the_post_thumbnail_url(); ?>)"></div>
             </div>
             <div class="col-md-5 content-block">
-                <span class="top-label fadeIn wow" data-wow-offset="10" data-wow-delay="0.1s"><?php the_field('post_category_subtitle'); ?></span>
-                <h2 class="title fadeIn wow" data-wow-offset="10" data-wow-delay="0.3s"><?php the_title(); ?></h2>
-                <p class="text fadeIn wow" data-wow-offset="10" data-wow-delay="0.3s"><?php the_field('post_short_text'); ?></p>
-                <a href="<?php echo get_post_permalink(); ?>" target="_blank"
-                   class="btn-simple btn-transparent fadeInUp wow" data-wow-offset="10" data-wow-delay="0.1s">
+                <span class="top-label"><?php the_field('post_category_subtitle'); ?></span>
+                <h2 class="title"><?php the_title(); ?></h2>
+                <p class="text"><?php the_field('post_short_text'); ?></p>
+                <a href="<?php echo get_post_permalink(); ?>"
+                   class="btn-simple btn-transparent">
                     <?php the_field('button_detail'); ?>
                 </a>
             </div>

@@ -17,9 +17,20 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                 <div class="breadcrumbs"><?php the_field('breadcrumbs'); ?></div>
                 <h1 class="title"><?php the_title(); ?></h1>
                 <div class="subtitle"><?php the_field('subtitle'); ?></div>
-                <a href="#" target="_blank" class='btn-simple btn-transparent'><?php the_field('button_detail'); ?></a>
+                <?php
+                    $category_id = get_cat_ID( 'Про нас' );
+                    $category_link = get_category_link( $category_id );
+                ?>
             </div>
         </div>
     </div>
+    <a href="#home_page_about_us" class='link-to-bottom'>
+        <span class="text"><?php the_field('button_detail'); ?></span>
+        <span class="circle">
+            <svg width="8" height="17" viewBox="0 0 8 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12.3429L5 0.833328L3 0.833328L3 12.3429L-2.62628e-08 12.3429L4 16.1667L8 12.3429L5 12.3429Z" fill="white"/>
+            </svg>
+        </span>
+    </a>      
 </section><!-- #post-## -->
 <?php unset($Bsb4Design); ?>

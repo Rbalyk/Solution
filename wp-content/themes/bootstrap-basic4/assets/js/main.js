@@ -36,6 +36,14 @@ jQuery(document).ready(function($) {
         ]
     });
 
+    $(".link-to-bottom").on('click', function (e) {
+        let hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 700);
+        e.preventDefault();
+    });
+
 
     $('#technical-task').change( (event) => {
         const reader = new FileReader();
@@ -142,6 +150,14 @@ jQuery(document).ready(function($) {
             $('.page-header.page-header-sitebrand-topbar').removeClass('header-white');
         }
     });
+
+    $(document).load( function () {
+        if ($(window).scrollTop() > 100) {
+            $('.page-header.page-header-sitebrand-topbar').addClass('header-white');
+        } else {
+            $('.page-header.page-header-sitebrand-topbar').removeClass('header-white');
+        }
+    })
 
     $('.toggle-navigation').click( function () {
        $(this).toggleClass('btn-toggle');

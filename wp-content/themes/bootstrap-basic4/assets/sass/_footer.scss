@@ -61,6 +61,9 @@ footer{
     }
     .left-part{
       padding-right: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
     }
     .right-part{
       padding-left: 10px;
@@ -142,44 +145,63 @@ footer{
 
 .order-service{
   @include section();
-  background: url("../../assets/img/home-form.png") no-repeat;
+  background: url("../../assets/img/form.png") no-repeat;
   background-size: cover;
   background-position: center;
+  padding: 0;
+  .free-consultation{
+    background: #1e1e1c;
+    max-width: 503px;
+    padding: 75px 45px;
+    @media all and (max-width: 768px){
+      margin: 0 auto;
+    }
+  }
   h2{
     @include section-title();
     font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43.88px;
     color: #F4F4F4;
-    margin-bottom: 15px;
+    margin-bottom: 45px;
     max-width: 650px;
     width: 100%;
+    text-transform: initial;
+    @media all and (max-width: 768px){
+      font-size: 24px;
+    }
   }
   .subtitle{
     font-family: $main-font;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    color: #F4F4F4;
-    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(244, 244, 244, 0.6);
+    margin-bottom: 15px;
     display: block;
+    b{
+      color: #ffffff;
+    }
   }
   .form-wrapper{
-    max-width: 224px;
-    @media all and (max-width: 991px) {
+    display: flex;
+    flex-direction: column;
+    max-width: 210px;
+    @media all and (max-width: 768px){
       max-width: 100%;
+      width: 100%;
     }
     input[type="submit"] {
-      padding: 12px 30px;
+      padding: 12px 33px;
       @include btn-white();
-      position: absolute;
-      right: -390px;
-      bottom: 0;
-      @media all and (max-width: 991px) {
-        right: inherit;
-        position: relative;
-        margin-top: 30px;
+      min-width: 245px;
+      margin-top: 45px;
+      font-size: 14px;
+      border-radius: 10px;
+      @media all and (max-width: 768px){
+        max-width: 100%;
+        width: 100%;
       }
     }
     br,.ajax-loader{
@@ -194,6 +216,9 @@ footer{
         color: $white;
         height: 39px;
         font-size: 18px;
+        border-left: 0;
+        border-right: 0;
+        border-bottom-width: 3px;
       }
       .control-label{
         color: #fff;
@@ -210,3 +235,103 @@ footer{
 
 
 }
+#what-result-do-you-get,#web-development{
+  .have-question{
+    margin-top: 60px;
+    .col-md-12{
+      background: $white;
+      border-radius: 25px;
+      padding: 50px 45px;
+      h2{
+        font-weight: 700;
+        font-family: $main-font;
+        font-style: normal;
+        font-size: 36px;
+        color: $text-color-black;
+        margin-bottom: 15px;
+        max-width: 650px;
+        width: 100%;
+        line-height: 47px;
+      }
+      .subtitle{
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $text-color-black;
+        margin-bottom: 30px;
+        display: block;
+        width: 500px;
+        @media all and (max-width: 768px){
+          width: 100%;
+        }
+      }
+      .form-wrapper{
+        max-width: 530px;
+        display: flex;
+        justify-content: space-between;
+        @media all and (max-width: 1200px){
+          max-width: 340px;
+          flex-direction: column;
+          justify-content: inherit;
+        }
+        @media all and (max-width: 991px) {
+          max-width: 100%;
+        }
+        input[type="submit"] {
+          padding: 12px 30px;
+          color: $white;
+          border: $text-color-black;
+          text-transform: capitalize;
+          background: $text-color-black;
+          position: absolute;
+          right: -380px;
+          bottom: 19px;
+          transition: all ease 0.3s;
+          &:hover{
+            color: $text-color-black;
+            background: $white;
+            box-shadow: 0 0 20px rgba(55,55,55,0.3);
+          }
+          @media all and (max-width: 1200px){
+            bottom: -3px;
+          }
+          @media all and (max-width: 991px) {
+            right: inherit;
+            position: relative;
+            margin-top: 30px;
+          }
+        }
+        br,.ajax-loader{
+          display: none;
+        }
+        label{
+          width: 244px;
+          @media all and (max-width: 1200px){
+            width: 100%;
+          }
+          &:first-child{
+            margin-bottom: 20px;
+          }
+          input{
+            border-color: transparent transparent #757575 transparent;
+            color: $text-color-black;
+            height: 39px;
+            font-size: 18px;
+          }
+          .control-label{
+            color: $text-color-black;
+          }
+        }
+
+        .has-label{
+          input{
+            border-color: transparent transparent $text-color-black transparent;
+          }
+        }
+      }
+    }
+
+  }
+}
+

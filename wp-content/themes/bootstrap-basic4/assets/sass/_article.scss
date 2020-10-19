@@ -1,0 +1,36 @@
+@import "variable";
+.article-post{
+  padding: 0;
+  margin-bottom: 90px;
+  header {
+    margin-bottom: 90px;
+    &:after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+    .container{
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .post-wrapper{
+    padding: 0 150px;
+    @media all and (max-width: 1200px) {
+      padding: 0 90px;
+    }
+    @media all and (max-width: 991px) {
+      padding: 0;
+    }
+    p,a,li,div{
+      line-height: 32px;
+      letter-spacing: 0.1px;
+      font-size: 16px;
+    }
+  }
+}

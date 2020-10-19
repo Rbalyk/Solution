@@ -9,7 +9,7 @@
 
 $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 ?>
-<section id="ux-ui-development">
+<section id="web-development">
     <div class="container">
         <div class="row">
             <div class="col-md-12 left-spacer">
@@ -79,36 +79,20 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             </div>
         </div>
     </div>
-    <div class="container design-process">
+    <div class="container web-process">
         <div class="row">
-            <div class="col-md-12">
-                <h2><?php the_field('section_subtitle'); ?></h2>
+            <div class="col-md-12 col-lg-6">
+                <h2><?php the_field('block_title_first'); ?></h3>
+                <p class="text-web-development"><?php the_field('block_text_first'); ?></p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h3><?php the_field('block_title_first'); ?></h3>
-            </div>
-            <div class="col-lg-8">
-                <p><?php the_field('block_text_first'); ?></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h3><?php the_field('block_title_second'); ?></h3>
-            </div>
-            <div class="col-lg-8">
-                <p><?php the_field('block_text_second'); ?></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h3><?php the_field('block_title_third'); ?></h3>
-            </div>
-            <div class="col-lg-8">
-                <p><?php the_field('block_text_third'); ?></p>
+            <div class="line"></div>
+            <div class="col-md-12 col-lg-6">
+                <h2><?php the_field('block_title_second'); ?></h3>
+                <p class="text-web-development"><?php the_field('block_text_second'); ?></p>
             </div>
         </div>
     </div>
+    <?php echo do_shortcode( '[contact-form-7 id="599" title="ВИНИКЛИ ЗАПИТАННЯ ?"]' ); ?>
 </section>
+
 <?php unset($Bsb4Design); ?>

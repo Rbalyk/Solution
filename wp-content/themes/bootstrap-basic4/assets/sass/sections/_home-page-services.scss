@@ -1,0 +1,103 @@
+@import "../mixins/different";
+@import "../mixins/titles";
+@import "../variable";
+
+#home_page_services,#category-services{
+  background: #1E1E1C;
+  @include section();
+  padding-bottom: 64px;
+  .container-fluid{
+    max-width: 1242px;
+    @media all and (max-width: 1300px) {
+      max-width: 991px;
+    }
+    >.row{
+      >.col-md-12{
+        h2{
+          @include section-title();
+          color: $white;
+          max-width: 320px;
+          margin-bottom: 54px;
+          margin-left: 62px;
+        }
+        .subtitle{
+          @include section-subtitle();
+          color: rgba(244, 244, 244, 0.8);
+          margin-left: 62px;
+          &:after{
+            background: $white;
+          }
+        }
+      }
+    }
+
+    .custom-row{
+      min-width: 100%;
+      display: flex;
+      padding: 0 8px;
+      flex-wrap: wrap;
+      .col-xl-3{
+        padding: 0 8px;
+        margin-bottom: 16px;
+        @media all and (max-width: 1300px) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+        @media all and (max-width: 768px) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        .item-service{
+          padding: 15px 10px 85px 30px;
+          border: 1px solid rgba(244, 244, 244, 0.1);
+          position: relative;
+          height: 100%;
+          img{
+            margin-bottom: 20px;
+            width: 35px;
+          }
+          h3{
+            font-family: $main-font;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            color: $white;
+            margin-bottom: 15px;
+            margin-top: 20px;
+          }
+          p{
+            font-size: 16px;
+            line-height: 26px;
+            font-family: $main-font;
+            color: $text-color-white;
+            margin-bottom: 15px;
+          }
+          a{
+            font-family: $main-font;
+            color: $text-color-black;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            background: $white;
+            width: calc(100% - 70px);
+            display: flex;
+            padding: 9px;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid $white;
+            transition: all ease 0.3s;
+            position: absolute;
+            left: 40px;
+            bottom: 40px;
+            border-radius: 10px;
+            text-transform: capitalize;
+            &:hover{
+              background: transparent;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
