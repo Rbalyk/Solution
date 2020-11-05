@@ -421,18 +421,10 @@ function what_result_do_you_get_func(){
 add_shortcode('what_result_do_you_get', 'what_result_do_you_get_func');
 
 function seo_func(){
-    query_posts(array('category_name' => 'seo-text'));
+    query_posts(array('category_name' => 'seo-front'));
     echo '<section class="seo" id="seo">';
     echo '<div class="container">';
     echo '<div class="row justify-content-center">';
-    echo '<div class="col-md-12 left-spacer">';
-    echo '<div class="subtitle">';
-    the_archive_description( '<div class="taxonomy-description">', '</div>' );
-    echo '</div>';
-    echo '<h2>';
-    single_cat_title();
-    echo '</h2>';
-    echo '</div>';
     $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     if ( have_posts() ) {
         while ( have_posts() ) {
@@ -445,6 +437,78 @@ function seo_func(){
     wp_reset_query();
 }
 add_shortcode('seo', 'seo_func');
+
+function seo_web_func(){
+    query_posts(array('category_name' => 'seo-web'));
+    echo '<section class="seo" id="seo">';
+    echo '<div class="container">';
+    echo '<div class="row justify-content-center">';
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/seo');
+        };
+    };
+    unset($Bsb4Design);
+    echo '</div></section>';
+    wp_reset_query();
+}
+add_shortcode('seo-web', 'seo_web_func');
+
+function seo_design_func(){
+    query_posts(array('category_name' => 'seo-design'));
+    echo '<section class="seo" id="seo">';
+    echo '<div class="container">';
+    echo '<div class="row justify-content-center">';
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/seo');
+        };
+    };
+    unset($Bsb4Design);
+    echo '</div></section>';
+    wp_reset_query();
+}
+add_shortcode('seo-design', 'seo_design_func');
+
+function seo_adwords_func(){
+    query_posts(array('category_name' => 'seo-adwords'));
+    echo '<section class="seo" id="seo">';
+    echo '<div class="container">';
+    echo '<div class="row justify-content-center">';
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/seo');
+        };
+    };
+    unset($Bsb4Design);
+    echo '</div></section>';
+    wp_reset_query();
+}
+add_shortcode('seo-adwords', 'seo_adwords_func');
+
+function seo_smm_func(){
+    query_posts(array('category_name' => 'seo-smm'));
+    echo '<section class="seo" id="seo">';
+    echo '<div class="container">';
+    echo '<div class="row justify-content-center">';
+    $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part('template-parts/custom/seo');
+        };
+    };
+    unset($Bsb4Design);
+    echo '</div></section>';
+    wp_reset_query();
+}
+add_shortcode('seo-smm', 'seo_smm_func');
 
 function what_result_do_you_get_adwords_func(){
     query_posts(array('category_name' => 'google-adwords-result'));
